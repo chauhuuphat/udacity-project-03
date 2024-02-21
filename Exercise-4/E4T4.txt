@@ -1,0 +1,10 @@
+1. What additional architectural change can be made to reduce the internet-facing attack surface of the web application instance.
+By update security group just only allow listen port 5000 from ALB, our Web Application Instance did not facing internet and avoid attack from outside.
+We can apply Cloud Fornt and WAF to web application, it can protect our application when facing to internet.
+2. Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+==> It can not, VPC private endpoint for S3 is applied to VPC layer, if the attack happen in same VPC, the unauthorized still can access to secrets buckets.
+3. Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+==> No, apply server-side encryption after creating S3 bucket just only encrypt new files, the existing file still un-encryption.
+4. The changes you made above were done through the console or CLI; describe the outcome if the original cloud formation templates are applied to this environment?
+==> All change from original cloud formation will overwrite configurations made by manually via console or CLI. That mean our changed via console or CLI will be lost.
+

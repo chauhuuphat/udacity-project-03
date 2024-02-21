@@ -1,0 +1,7 @@
+1. Identify 2-3 changes that can be made to our environment to prevent an SSH brute force attack from the internet.
+==> 1.1 Update security group of web service instance just only allow inbound rule to listen security group of ALB on port 5000.
+    1.2 Use session manager to SSH to web service instance instead of Bastion host.
+    1.3 Use SSH key instead of SSH password and disable password login via SSH 
+2. Neither instance should have had access to the secret recipes bucket; even in the instance that API credentials were compromised how could we have prevented access to sensitive data?
+==> 2.1 Should define clearly IAM role and permission to access to recipes secret bucket. For example: with free recipes bucket which can access by web service instance, we will create an IAM instance role access to that bucket with read permission. In the other hand, with recipes bucket, we will create one more IAM role just only allow for privilege bussiness users.
+    2.2 Enable server-side encryption with AWS Key Management Service Key (SSE-KMS) to S3 bucket "recieps secret bucket"

@@ -1,0 +1,9 @@
+Based on the current report of AWS config, we have some recommend for security:
+    1. Security Hub IAM Password Policy ==> Follow the standard of password policy.
+    2. Enable AWS Macie which is a cloud-based data security and data privacy service that uses machine learning and pattern matching to discover, monitor, and protect sensitive data stored in Amazon Web Services (AWS).
+    3. Enable encyption EBS for EC2.
+    4. Using VPC Endpoint in VPC.
+    5. Enable Logging for S3 bucket.
+
+Based on the current report of AWS Inspector, we have some security vulnerability:
+    1. Security group open all ports with IP o.o.o.o/o. The remediate step will be only allow security group "AppLoadBalancerSG" with port 5000.

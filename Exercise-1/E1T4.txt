@@ -1,0 +1,4 @@
+Based on the initial deployment architecture diagram, we can eassy to detect two poor security:
+        1. Web Service Instance allowed access from internet. Therefore, it will get attack from outside. To remediate it, we should configure security group "WebAppSG" allow inbound from security group "AppLoadBalancerSG" with port 5000.
+        2. An IAM Role and Policy can connect to all S3 Bucket, it violated the least privilege permission. To remediate it, creating separetely IAM role and Policy for two S3 Bucket.
+          

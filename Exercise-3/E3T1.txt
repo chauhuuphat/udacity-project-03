@@ -1,0 +1,5 @@
+1. What findings were detected related to the brute force attack?
+==> UnauthorizedAccess:EC2/SSHBruteForce / Finding ID: d0c6e2466d5d26b200cc8e502b140828. The EC2 instance i-066d2dc9cc4c0274f is performing SSH brute force attacks against 10.192.10.69. Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password.
+3. Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information?
+Data source: VPC flow logs
+This finding informs you that an EC2 instance in your AWS environment was involved in a brute force attack aimed at obtaining passwords to SSH services on Linux-based systems. This can indicate unauthorized access to your AWS resources.
