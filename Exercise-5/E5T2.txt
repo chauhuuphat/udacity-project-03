@@ -1,13 +1,31 @@
-1. Identify tools that will allow you to do the following: 
-    a. Scan infrastructure as code templates. 
-    ==> we will apply "terraform plan" to identify compatible of code, and then apply "regula" to check security complaince and missconfiguration.
-    b. Scan AMI’s or containers for OS vulnerabilities. 
-    ==> Appling AWS inspector to scan vulnerabilities.
-    c. Scan an AWS environment for cloud configuration vulnerabilities.
-    ==> Appling AWS Inspector, Security Hub, and GuardDuty, AWS config.
+# Identify tools that will allow you to do the following: 
+    ## Scan infrastructure as code templates. 
+        ### Terrascan.
+        ### Regula.
+        ### CheckOV. 
+    ## Example vulnerabilities
+        ### Missconfiguration such as full permission for S3 in IAM policy.
+        ### Security group with ingress 0.0.0.0/0 to SSH port.
 
-2. For each tool - identify an example compliance violation or vulnerability that it might expose.
-- Regula: missconfiguration such as full permission for S3 in IAM policy.
-- AWS Inspector: Updated operating system and application, network expose ports can access from internet and easy get attack
-- AWS security Hub: Multi-factor authentication not enabled, S3 bucket permission, IAM policy do not apply least privilege, encryption of EBS or S3 not enabled.
-- AWS Config: compliance not meet CIS AWS Foundation Benchmark, security group has been changed, resource created without compliance tags.
+    ## Scan AMI’s or containers for OS vulnerabilities. 
+        ### AWS Inspector.
+        ### Packer.
+        ### ECR image scanning.
+        ### Trivy
+    ## Example vulnerabilities.
+        ### Unpacked OS and applications.
+        ### CVEs.
+        ### Operating system vulnerabilities:.
+        ### Programming language-specific vulnerabilities.
+
+    ## Scan an AWS environment for cloud configuration vulnerabilities.
+        ### AWS Inspector
+        ### AWS Security Hub
+        ### AWS GuardDuty
+        ### AWS config.
+    ## Example vulnerabilities
+        ### S3 bucket with public write access
+        ### Unencrypted EBS volumes.
+        ### Suspicious instance behavior
+        ### Vulnerable software packages.
+ 
